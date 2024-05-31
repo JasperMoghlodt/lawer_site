@@ -16,8 +16,6 @@ function fnSpoiler(){
   }
 }
 
-
-
 function fnBurger() {
   const htmlCss ='_js-burger-open';
   const $html = document.documentElement;
@@ -38,18 +36,12 @@ function fnBurger() {
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+const linkElement = document.querySelector('link[rel="stylesheet"]');
+const buttonElement = document.querySelector('btn-theme');
+let isDarkTheme = false;
+function toggleTheme() {
+    isDarkTheme = !isDarkTheme;
+    const newTheme = isDarkTheme ? 'css/style_dark.css' : 'css/style.css';
+    linkElement.href = newTheme;
+}
+buttonElement.addEventListener("click", toggleTheme);
